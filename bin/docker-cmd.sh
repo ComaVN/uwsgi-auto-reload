@@ -8,7 +8,8 @@ uwsgi \
     --py-auto-reload 3 \
     --socket 0.0.0.0:3031 \
     --pidfile "$PID_FILE" \
-    --daemonize2 /proc/1/fd/2 \
+    --daemonize2 /dev/null \
+    --logger "file:/proc/1/fd/2" \
     --wsgi app.wsgi:application \
 ;
 
